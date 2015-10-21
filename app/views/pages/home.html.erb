@@ -1,0 +1,53 @@
+<div class="container">
+
+  <h1>drawing app</h1>
+
+  <div id="pallettenqr">
+
+    <div class="drawingmenu">
+      
+      <label>Pallette
+
+      <select id="pallette">
+
+        <option value="red">Red
+        </option>
+        <option value="pink">Pink
+        </option>
+        <option value="blue">Blue
+        </option>
+        <option value="#00ff00">Green
+        </option>
+
+      </select>
+
+      </label>
+
+      <label>Drawing tool
+
+      <select id="size">
+
+      	<option id="pencil" value="6">Pencil
+        </option>
+        <option  value="10">Marker
+        </option>
+        <option value="14">8byte
+        </option>
+
+      </select>
+
+      </label>
+
+
+      <button id="clear" value="clear">clear</button>
+      
+    </div>
+
+	<canvas id="drawing" width="300" height="300">    
+		</canvas>
+
+		<button id="savecanvas" value="submit">save</button>
+
+</div>
+
+<%= link_to ("Go to picture index"), index_path %>

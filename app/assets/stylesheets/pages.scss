@@ -1,0 +1,184 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body { padding-top: 60px; }
+footer { margin-top: 100px; }
+
+
+.container { 
+  position: relative; 
+  text-align: center;
+  margin: 0 auto;
+  font-family: helvetica, sans-serif;  
+}
+
+#drawing {
+  border: 1px solid #000;
+  padding: 0px;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2em;
+  padding: 0.25em;
+
+}
+
+.drawingmenu {
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.drawingmenu label, .drawingmenu select, {
+  padding: 100px;
+}
+
+button[value=submit] {
+  display: block;
+  margin: 50px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ * {
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+ 
+.gallery {
+  margin: auto 12.5% auto 12.5%;
+  overflow: visible;
+  text-align: center;
+}
+
+div img {
+  float: left;
+  width: 12vw;
+  height: 12vw;
+  margin: .25vw;
+  border: .5vw solid #333;
+ -moz-transition: all 0.5s ease-in-out;
+ -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 6vw;
+}
+
+div img:hover {
+  border: .5vw solid #2cc26b;
+  width: 12.5vw;
+  height: 12.5vw;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6.25vw;  
+  box-sizing: border-box;
+}
+
+
+nav {
+  width: 100%;
+  border: 0;
+  background: #007FFF;
+  margin: 0;
+  opacity: 0.75;
+  z-index: 100;
+}
+
+nav ul {
+  overflow: hidden;
+  margin: 0;
+  /* this changes the top */
+  
+  padding: 0;
+  /* brings list to edge */
+}
+
+nav ul li {
+  list-style: none;
+  width: 12.5%;
+  text-align: center;
+  float: left;
+  /* boxes in a line */
+  
+  box-sizing: border-box;
+  /* aligns it in the box */
+  
+  border: 0px solid black;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: .83em;
+  color: white;
+  padding: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+nav ul li {
+  position: relative;
+  left: 12.5vw;
+}
+
+nav a:hover, nav ul li:hover  {
+  background: black;
+}
+
+h1 {
+  position: relative;
+  left: 20px;
+  top: -50px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: pink;
+  margin: 0 auto;
+}
+.footer {
+  width: 75vw;
+  margin: 0 auto;
+}
+svg {
+  width: 100%;
+  margin-top: 5vw;
+}
+
+
+
