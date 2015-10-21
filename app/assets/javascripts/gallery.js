@@ -1,14 +1,19 @@
 $(document).ready(function() {
 	if ($(".gallery").length > 0) {
-		console.log(gon.picture);
+		// var currentImage = [];
+		// var ctx = [];
+		// var img = [];
 
-		var gallery = $(".gallery");
-		var ctx = gallery.getContext('2d');
-		var img = new Image;
-		
-		img.src = gon.picture;
-		img.onload = function() {
-			ctx.drawImage(img, 10, 10)	
+		console.log('this is running');
+		for (var i = 0; i < gon.pictures.length; i++) {
+
+			currentImage = $(".galleryCanvas")[i];
+			ctx = currentImage.getContext('2d');
+			img = new Image;
+			
+			img.src = gon.pictures[i].picture;
+			
+			ctx.drawImage(img,10,10,80,80)	
 		}
 		// All the code above is used to draw our image on the page, from what we have in the database.
 	}

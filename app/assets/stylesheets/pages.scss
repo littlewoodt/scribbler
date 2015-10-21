@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body { padding-top: 60px; }
-footer { margin-top: 100px; }
+* {
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
 
 
 .container { 
@@ -41,34 +54,23 @@ button[value=submit] {
 }
 
 
-
-
-
 /* added */
 
-* {
-  margin: 0;
-  padding: 0;  
+nav a:hover {
+	text-decoration: none;
 }
 
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #eee;
+nav a:hover, nav ul li:hover  {
+  background: black;
 }
 
-a {
-  text-decoration: none;
-  color: #333;
-}
- 
 .gallery {
   margin: auto 12.5% auto 12.5%;
   overflow: visible;
   text-align: center;
 }
 
-div img {
+div .gallery img {
   float: left;
   width: 12vw;
   height: 12vw;
@@ -83,7 +85,7 @@ div img {
   border-radius: 6vw;
 }
 
-div img:hover {
+div .gallery img:hover {
   border: .5vw solid #2cc26b;
   width: 12.5vw;
   height: 12.5vw;
@@ -164,4 +166,20 @@ h1 {
   border-radius: 8px;
   background: pink;
   margin: 0 auto;
+}
+
+canvas {
+  background: white;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.drawingpallette {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.drawingpallette img {
+	width: 100%;
+	margin: 0 auto;
 }

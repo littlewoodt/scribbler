@@ -6,11 +6,11 @@ class PagesController < ApplicationController
   	@picture = Picture.new(picture: params[:picture])
   	respond_to do |format|
       if @picture.save
-        format.html { redirect_to root_path, notice: "Save process completed!" }
+        format.html { redirect_to draw_path, notice: "Save process completed!" }
       else
         format.html { 
           flash.now[:notice]="Save proccess coudn't be completed!" 
-      	  redirect_to root_path
+      	  redirect_to draw_path
         }
       end
     end
@@ -22,6 +22,7 @@ class PagesController < ApplicationController
 
   def gallery
     @pictures = Picture.all
+    gon.pictures = @pictures
   end
 
   def show
