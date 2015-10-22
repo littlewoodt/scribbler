@@ -171,7 +171,7 @@ h1 {
 canvas {
   background: white;
   width: 300px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .drawingpallette {
@@ -182,4 +182,17 @@ canvas {
 .drawingpallette img {
 	width: 100%;
 	margin: 0 auto;
+}
+
+footer {
+  padding-top: 50px
+}
+.controls a {
+  font-size: 2em;
+  color: red;
+  padding: 10px 20px;
+  width: 20px;
+  height: 10px;
+  background: white;
+  text-decoration: none;
 }

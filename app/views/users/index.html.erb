@@ -1,0 +1,13 @@
+<div class="container">
+
+	<h2>users</h2>
+	
+	<% @users.each do |user| %>
+
+		<%= link_to( user.username, user_path(user.id)) %>
+		<p><%= user.name %></p>
+		<br />
+	<% end %>
+	</ul>
+
+</div>
