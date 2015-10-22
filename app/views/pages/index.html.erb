@@ -5,8 +5,9 @@
 		<% @pictures.each do |pic| %>
 			<li>
 				 <%= link_to ("Drawing " + pic.id.to_s), show_path(pic.id) %>
-				 <%= img ("Drawing " + pic.id.to_s), show_path(pic.id) %>
 			</li>	
 		<% end %>
 	<% end %>
 </ul>
+
+<%= link_to ("Back to scribble"), draw_path %>

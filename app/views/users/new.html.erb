@@ -1,13 +1,45 @@
 <!-- app/views/users/new.html.erb -->
 
-<h1>Signup!</h1>
+<!--<h1>Signup!</h1>-->
 
+<!--
 <%= form_for :user, url: '/users' do |f| %>
 
   Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", :value => "Login" %>
 
 <% end %>
+-->
+
+
+<div class="container">
+
+  <div id="login-form">
+
+    <h3>Signup to scribble!</h3>
+
+	<%= form_for :user, url: '/users' do |f| %>
+
+	 	
+	 	<%= f.text_field :name, :placeholder => "Name", :type => "name" %>
+   		<%= f.text_field :email, :placeholder => "Email",  :type => "email" %>
+  		<%= f.password_field :password, :placeholder =>"Password", :type => "password" %>
+		<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+
+
+        <div class="signfooter">
+
+  	<%= f.submit "Submit", :value => "Sign up!" %>
+
+  	<% end %>     
+
+
+        </div>
+ 
+
+  </div>
+
+</div>

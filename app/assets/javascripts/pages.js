@@ -131,7 +131,7 @@
     
     // clear canvas
     clear.addEventListener('click', function () {
-      context.clearRect(0,0,300,300);
+      context.clearRect(0,0,600,600);
     });
 
     // save canvas

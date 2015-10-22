@@ -10,7 +10,21 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #eee;
+  background: #384047;
+  background: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+canvas {
+  background: #fff;
+  width: 50vw;
+  display: block;
+  margin: 50px auto 10px;
+  /*margin: 100px auto;*/
+  border-radius: 5px;
+  box-shadow: 0 4px 0 0 #ccc;
 }
 
 a {
@@ -18,16 +32,25 @@ a {
   color: #333;
 }
 
-
 .container { 
-  position: relative; 
+  width: 75vw;
   text-align: center;
   margin: 0 auto;
-  font-family: helvetica, sans-serif;  
+      flex-grow: 1;
+
+}
+
+.container h1 {
+  font-weight: 400;
+  line-height: 200%;
+}
+.container p {
+  width: 100%;
+  line-height: 160%;
 }
 
 #drawing {
-  border: 1px solid #000;
+  border: 1px solid #eee;
   padding: 0px;
   display: block;
   margin: 0 auto;
@@ -36,7 +59,6 @@ a {
 h1 {
   font-size: 2em;
   padding: 0.25em;
-
 }
 
 .drawingmenu {
@@ -53,7 +75,6 @@ button[value=submit] {
   margin: 50px auto;
 }
 
-
 /* added */
 
 nav a:hover {
@@ -64,13 +85,7 @@ nav a:hover, nav ul li:hover  {
   background: black;
 }
 
-.gallery {
-  margin: auto 12.5% auto 12.5%;
-  overflow: visible;
-  text-align: center;
-}
-
-div .gallery img {
+div.container ul.gallery a canvas.galleryCanvas {
   float: left;
   width: 12vw;
   height: 12vw;
@@ -95,12 +110,12 @@ div .gallery img:hover {
   box-sizing: border-box;
 }
 
-
 nav {
   width: 100%;
   border: 0;
   background: #007FFF;
   margin: 0;
+  margin-bottom: 20px;
   opacity: 0.75;
   z-index: 100;
 }
@@ -145,6 +160,17 @@ nav ul li a {
   transition: all 0.4s ease-in-out;
 }
 
+nav.tile-nav ul li.colour-1 a {
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+  max-height: 57px;
+  line-height: 20px;
+  text-align: center;
+  width: 12.5vw;
+  float: right;
+}
+
 nav ul li {
   position: relative;
   left: 12.5vw;
@@ -154,11 +180,7 @@ nav a:hover, nav ul li:hover  {
   background: black;
 }
 
-h1 {
-  position: relative;
-  left: 20px;
-  top: -50px;
-}
+
 
 .circle {
   width: 16px;
@@ -168,24 +190,11 @@ h1 {
   margin: 0 auto;
 }
 
-canvas {
-  background: white;
-  width: 300px;
-  margin: 100px auto;
-}
-
-.drawingpallette {
-	width: 300px;
-	margin: 0 auto;
-}
-
-.drawingpallette img {
-	width: 100%;
-	margin: 0 auto;
-}
 
 footer {
-  padding-top: 50px
+  margin-top: 20px;
+  padding-bottom: 50px;
+  text-align: center;
 }
 .controls a {
   font-size: 2em;
@@ -195,4 +204,70 @@ footer {
   height: 10px;
   background: white;
   text-decoration: none;
+}
+
+
+/*
+button {
+  background: #0abe8c;
+  box-shadow: 0 3px 0 0 #6A845F;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  text-shadow: 0 1px #6A845F;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 5px 20px;
+  width: 160px;
+}*/
+
+
+
+button {
+  background: #0abe8c;
+  width: 25vw;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 12px 20px;
+  border: 0;
+  display: block;
+}
+
+button:hover {
+  color: #fff;
+  background: #0abe8c;
+  border: 0;
+}
+
+#clear {
+  display: block;
+  background: red;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+
+#drawingmenu {
+  width: 600px;
+  border: 0 solid black;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+select {
+  width: 25vw;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #eee;
+  height:60px;
+  padding: 10px;
 }

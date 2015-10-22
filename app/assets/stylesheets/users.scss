@@ -1,3 +1,84 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* -------------------- */
+
+
+#login-form {
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 4px 0 0 #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+#login-form h3 {
+  background-color: #282830;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+#login-form form {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  position: relative;
+}
+
+#login-form input {
+  font-size: 14px;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"],
+#login-form input[type="password confirmation"],
+#login-form input[type="name"]   {
+  border: 1px solid #dcdcdc;
+  padding: 12px 10px;
+  width: 100%;
+}
+
+#login-form input[type="email"] {
+  border-radius: 3px 3px 0 0;
+}
+
+#login-form input[type="password"] {
+  border-top: none;
+  border-radius: 0px 0px 3px 3px;
+}
+
+
+#login-form .signfooter {
+  font-size: 12px;
+  margin-top: 16px;
+  margin-bottom: 60px;
+   border-radius: 5px;
+  box-shadow: 0 4px 0 0 #ccc;
+  background: #fff;
+}
+
+
+#login-form input[type="submit"] {
+  background: #0abe8c;
+  width: 100%;
+  border-radius: 5px;
+  color: #fff;
+  float: right;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 12px 20px;
+  border: 0;
+}
+
+#login-form input[type="submit"]:hover {
+  color: #fff;
+  background: #0abe8c;
+  border: 0;
+
+}
