@@ -7,6 +7,19 @@
   padding: 0;  
 }
 
+div.pallette, div.drawing-tool {
+  width: 48%;
+  float: left;
+}
+
+div.drawing-tool {
+  float: right;
+}
+
+div.pallette *, div.drawing-tool * {
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -17,11 +30,11 @@ body {
   min-height: 100vh;
 }
 
-canvas {
+canvas#drawing, canvas.showCanvas {
   background: #fff;
-  width: 50vw;
+  width: 600px;
   display: block;
-  margin: 50px auto 10px;
+  margin: 20px auto 10px;
   /*margin: 100px auto;*/
   border-radius: 5px;
   box-shadow: 0 4px 0 0 #ccc;
@@ -36,7 +49,7 @@ a {
   width: 75vw;
   text-align: center;
   margin: 0 auto;
-      flex-grow: 1;
+  flex-grow: 1;
 
 }
 
@@ -68,6 +81,7 @@ h1 {
 
 .drawingmenu label, .drawingmenu select, {
   padding: 100px;
+  padding-top: 20px;
 }
 
 button[value=submit] {
@@ -180,8 +194,6 @@ nav a:hover, nav ul li:hover  {
   background: black;
 }
 
-
-
 .circle {
   width: 16px;
   height: 16px;
@@ -206,7 +218,6 @@ footer {
   text-decoration: none;
 }
 
-
 /*
 button {
   background: #0abe8c;
@@ -224,7 +235,6 @@ button {
   padding: 5px 20px;
   width: 160px;
 }*/
-
 
 
 button {
@@ -259,13 +269,13 @@ button:hover {
   width: 600px;
   border: 0 solid black;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 select {
   width: 25vw;
   border: 1px solid black;
-  margin: 0 auto;
+  margin: 10px auto;
   display: block;
   border: 1px solid #eee;
   height:60px;
