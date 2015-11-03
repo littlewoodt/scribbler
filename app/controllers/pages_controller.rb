@@ -31,4 +31,7 @@ class PagesController < ApplicationController
     # gon is a gem that allows us to pass a rails/ruby variable into our javascript.
   end
 
+
+
+
 end

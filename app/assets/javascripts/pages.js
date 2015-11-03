@@ -1,7 +1,10 @@
 
+  
   // Keep everything in anonymous function, called on window load.
+
   if(window.addEventListener) {
   window.addEventListener('load', function () {
+
     if ($('#drawing').length > 0) {
     var canvas;
     var context;
@@ -10,6 +13,7 @@
     var clear;
     var eraser;
     var size;
+    var radius = size;
     var savecanvas;
 
     function init () {
@@ -21,7 +25,7 @@
       context = canvas.getContext('2d');
 
       // Pencil tool instance.
-      tool = new tool_pencil();
+      // tool = new tool_pencil();
 
       // TODO
       // Add eraser
@@ -32,10 +36,10 @@
       // To to pixelate pen
       
       // Change size
-      size = document.getElementById('size');
+      //size = document.getElementById('size');
 
       // Get the colour select input
-      swatch = document.getElementById('pallette');
+      // swatch = document.getElementById('pallette');
 
       // Get the tool select input
       //tool = document.getElementById('tool');
@@ -44,95 +48,259 @@
       clear = document.getElementById('clear');
 
       // save canvas
-      savecanvas = document.getElementById('savecanvas'); //
+      savecanvas = document.getElementById('savecanvas'); 
 
       // Eraser tool
-      eraser = document.getElementById('eraser');
+      // eraser = document.getElementById('eraser');
 
       // Attach the mousedown, mousemove and mouseup event listeners.
-      canvas.addEventListener('mousedown', ev_canvas, false);
-      canvas.addEventListener('mousemove', ev_canvas, false);
-      canvas.addEventListener('mouseup', ev_canvas, false);
+      canvas.addEventListener('mousedown', engage);
+      canvas.addEventListener('mousemove', putPoint);
+      canvas.addEventListener('mouseup', disengage);
+      savecanvas.addEventListener('click', saveImage);
+
+    } // end init
+
+
+/////////////////////////////////////////////////////
+//                                                 //
+//             Canvas drawing functions            //
+//                                                 //
+/////////////////////////////////////////////////////
+  
+var canvas = document.getElementById('drawing');
+var context = canvas.getContext('2d');
+
+var radius = 10;
+var dragging = false;
+
+var shape = "round";
+
+canvas.width = 600;
+canvas.height = 600;
+
+context.lineWidth = radius;
+
+var putPoint = function(e) {
+  if (dragging) {
+    if ( shape === "square" ) {
+    //context.lineTo(e.clientX, e.clientY); //
+    //context.lineWidth = radius; //
+    //context.lineCap = 'butt'; //
+    context.lineJoin = 'miter'; //
+    context.stroke();  
+    context.rect(e.clientX,e.clientY,radius,radius); // for an 8byte look
+    context.fill();
+    context.beginPath();
+    context.moveTo(e.clientX,e.clientY);
     }
-
-    // The painting tool works like a drawing pencil 
-    // which tracks the mouse movements.
-
-    // Pencil
-    function tool_pencil () {
-      var tool = this;
-      this.started = false;
-
-      // This is called when you start holding down the mouse button.
-      // This starts the pencil drawing.
-
-      // mousedown
-      this.mousedown = function (ev) {
-          context.beginPath();
-          context.moveTo(ev._x, ev._y);
-          tool.started = true;
-      };
-
-      // This function is called every time you move the mouse. 
-      // but it only draws if the
-      // tool.started state is set to true 
-      // when you are holding down 
-      // the mouse button
-
-      // mousemove
-      this.mousemove = function (ev) {
-        if (tool.started) {
-          context.lineWidth = size.value;
-          context.lineCap = 'butt';
-          context.lineJoin = 'miter';
-          context.lineTo(ev._x, ev._y);
-
-          // Attaches the color from the menu
-          context.strokeStyle = swatch.value; // mike
-          context.stroke();
-        }
-      };
-
-      // This is called when you release the mouse button.
-      // mouseup
-      this.mouseup = function (ev) {
-        if (tool.started) {
-          tool.mousemove(ev);
-          tool.started = false;
-        }
-      };
+    else {
+    context.lineTo(e.clientX, e.clientY);
+    context.stroke();
+    context.beginPath(); // clears path
+    context.arc(e.clientX,e.clientY, radius, 0, Math.PI*2);
+    context.fill();
+    context.beginPath();
+    context.moveTo(e.clientX,e.clientY);
     }
+  }
+}
 
-    // The general-purpose event handler. This function just determines the mouse 
-    // position relative to the canvas element.
-    function ev_canvas (ev) {
-      if (ev.layerX || ev.layerX === 0) { // Firefox
-        ev._x = ev.layerX;
-        ev._y = ev.layerY;
-      } else if (ev.offsetX || ev.offsetX === 0) { // Opera
-        ev._x = ev.offsetX;
-        ev._y = ev.offsetY;
-      }
+var engage = function(e) {
+  dragging = true;
+  putPoint(e);
+}
 
-      // Call the event handler of the tool.
-      var func = tool[ev.type];
-      if (func) {
-        func(ev);
-      }
-    }
+var disengage = function() {
+  dragging = false;
+  context.beginPath();
+}
 
-    init();
 
-    // change stroke color
-    // Event listener which listens to the 'palette' drop down menu, when it changes, it updates the strokeStyle property.
-    swatch.addEventListener('change', function() {
-      context.strokeStyle = swatch.value;
-    });
-    
-    // clear canvas
-    clear.addEventListener('click', function () {
-      context.clearRect(0,0,600,600);
-    });
+canvas.addEventListener('mousedown', engage);
+canvas.addEventListener('mousemove', putPoint);
+canvas.addEventListener('mouseup', disengage);
+
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+
+
+init();
+
+
+
+/////////////////////////////////////////////////////
+//                                                 //
+//                     Tools                       //
+//                                                 //
+/////////////////////////////////////////////////////
+
+
+
+var setRadius = function (newRadius) {
+  if (newRadius<minRad) {
+    newRadius = minRad;
+  } else if (newRadius>maxRad) {
+    newRadius = maxRad;
+  }
+  radius = newRadius;
+  context.lineWidth = radius * 2;
+  radSpan.innerHTML = radius;
+}
+
+var minRad = 5,
+    maxRad = 100,
+    defaultRad = 20,
+    interval = 5,
+    radSpan = document.getElementById('radval'),
+    decRad = document.getElementById('decrad'),
+    incRad = document.getElementById('incrad');
+
+decRad.addEventListener('click', function() {
+  setRadius(radius-interval);
+});
+
+incRad.addEventListener('click', function() {
+  setRadius(radius+interval);
+});
+
+setRadius(defaultRad);
+
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+
+init();
+
+
+/////////////////////////////////////////////////////
+//                                                 //
+//                     Colors                      //
+//                                                 //
+/////////////////////////////////////////////////////
+
+var colors = [
+      "rgba(255, 255, 255, 1)",        
+      "rgba(255, 127, 254, 1)",
+      "rgba(255, 127, 191, 1)",
+      "rgba(255, 127, 127, 1)",
+      "rgba(255, 191, 127, 1)",
+      "rgba(254, 255, 127, 1)",
+      "rgba(191, 255, 127, 1)",
+      "rgba(127, 255, 127, 1)",
+      "rgba(127, 255, 191, 1)",
+      "rgba(127, 254, 255, 1)",
+      "rgba(127, 191, 255, 1)",
+      "rgba(127, 127, 255, 1)",
+      "rgba(191, 127, 255, 1)",
+      "rgba(150, 150, 150, 1)",
+      "rgba(255, 0, 254, 1)",
+      "rgba(255, 0, 127, 1)",
+      "rgba(255, 0, 0, 1)",
+      "rgba(255, 127, 0, 1)",
+      "rgba(254, 255, 0, 1)",
+      "rgba(127, 255, 0, 1)",
+      "rgba(0, 255, 0, 1)",
+      "rgba(0, 255, 127, 1)",
+      "rgba(0, 254, 255, 1)",
+      "rgba(0, 127, 255, 1)",
+      "rgba(0, 0, 255, 1)",
+      "rgba(127, 0, 255, 1)",
+      "rgba(0, 0, 0, 1)",
+      "rgba(127, 0, 127, 1)",
+      "rgba(127, 0, 63, 1)",
+      "rgba(127, 0, 0, 1)",
+      "rgba(127, 63, 0, 1)",
+      "rgba(127, 127, 0, 1)",
+      "rgba(63, 127, 0, 1)",
+      "rgba(0, 127, 0, 1)",
+      "rgba(0, 127, 63, 1)",
+      "rgba(0, 127, 127, 1)",
+      "rgba(0, 63, 127, 1)",
+      "rgba(0, 0, 127, 1)",
+      "rgba(63, 0, 127, 1)"
+];
+
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+
+
+for (var i =0, n=colors.length; i<n; i++ ) {
+  var swatch = document.createElement('div');
+  swatch.className = 'swatch';
+  swatch.style.backgroundColor = colors[i];
+  swatch.addEventListener('click', setSwatch);
+  document.getElementById('colors').appendChild(swatch);
+}
+
+function setColor(color) {
+  context.fillStyle = color;
+  context.strokeStyle = color;
+  var active = document.getElementsByClassName('active')[0];
+  if (active) {
+    active.className = 'swatch';
+  }
+}
+
+function setSwatch(e) {
+  // identify swatch
+  var swatch = e.target;
+  // set color
+  setColor(swatch.style.backgroundColor); // can use anything
+  // active class
+  swatch.className += ' active'; // need space to sepearate classes
+}
+
+setSwatch({target: document.getElementsByClassName('swatch')[0]});
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+
+
+init();
+
+
+/////////////////////////////////////////////////////
+//                                                 //
+//                      clear                      //
+//                                                 //
+/////////////////////////////////////////////////////
+
+//clear.addEventListener('click', function () {
+  //context.clearRect(0,0,600,600);
+//});
+
+
+var clearButton = document.getElementById('clear');
+var clear = function () {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
+clearButton.addEventListener('click', clear);
+
+
+
+/////////////////////////////////////////////////////
+//                                                 //
+//                       save                      //
+//                                                 //
+/////////////////////////////////////////////////////
 
     // save canvas
     savecanvas.addEventListener('click', saveImage);
@@ -151,6 +319,8 @@
 
   }
 
+init();
 
-    }
-  }, false); }
+    } // end if drawing.length > 0
+
+}, false); }

@@ -7,19 +7,6 @@
   padding: 0;  
 }
 
-div.pallette, div.drawing-tool {
-  width: 48%;
-  float: left;
-}
-
-div.drawing-tool {
-  float: right;
-}
-
-div.pallette *, div.drawing-tool * {
-  max-width: 100%;
-}
-
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -30,14 +17,17 @@ body {
   min-height: 100vh;
 }
 
+
+/*    CANVAS    */
 canvas#drawing, canvas.showCanvas {
   background: #fff;
   width: 600px;
   display: block;
   margin: 20px auto 10px;
-  /*margin: 100px auto;*/
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   box-shadow: 0 4px 0 0 #ccc;
+  position: relative;
+  top: -80px;
 }
 
 a {
@@ -45,12 +35,13 @@ a {
   color: #333;
 }
 
+
+/*    CONTAINER    */
 .container { 
   width: 75vw;
   text-align: center;
   margin: 0 auto;
   flex-grow: 1;
-
 }
 
 .container h1 {
@@ -60,13 +51,6 @@ a {
 .container p {
   width: 100%;
   line-height: 160%;
-}
-
-#drawing {
-  border: 1px solid #eee;
-  padding: 0px;
-  display: block;
-  margin: 0 auto;
 }
 
 h1 {
@@ -89,10 +73,12 @@ button[value=submit] {
   margin: 50px auto;
 }
 
+
+
 /* added */
 
 nav a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 nav a:hover, nav ul li:hover  {
@@ -124,13 +110,15 @@ div .gallery img:hover {
   box-sizing: border-box;
 }
 
+
+/*    NAVIGATION    */
 nav {
   width: 100%;
   border: 0;
   background: #007FFF;
   margin: 0;
   margin-bottom: 20px;
-  opacity: 0.75;
+  opacity: 1;
   z-index: 100;
 }
 
@@ -218,24 +206,6 @@ footer {
   text-decoration: none;
 }
 
-/*
-button {
-  background: #0abe8c;
-  box-shadow: 0 3px 0 0 #6A845F;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  text-shadow: 0 1px #6A845F;
-  display: block;
-  font-size: 16px;
-  line-height: 40px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px auto;
-  padding: 5px 20px;
-  width: 160px;
-}*/
-
 
 button {
   background: #0abe8c;
@@ -256,6 +226,7 @@ button:hover {
   border: 0;
 }
 
+/*
 #clear {
   display: block;
   background: red;
@@ -265,19 +236,122 @@ button:hover {
   text-align: center;
 }
 
-#drawingmenu {
-  width: 600px;
-  border: 0 solid black;
-  margin: 0 auto;
-  margin-top: 20px;
+*/
+
+
+
+
+
+
+/* 
+             toolbar swatch scc
+
+*/
+
+
+
+
+
+#toolbar {
+  width: 800px;
+  height: 120px;
+  padding: 20px;
+  padding-bottom:130px;
+  background-color: #2f2f2f;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 0 0 #ccc;
+  margin: 180px auto;
+
 }
 
-select {
-  width: 25vw;
-  border: 1px solid black;
-  margin: 10px auto;
-  display: block;
-  border: 1px solid #eee;
-  height:60px;
-  padding: 10px;
+/* TOOLBAR CENTER, 600PX */
+#toolbar {
+  width: 600px;
+  margin: 20px auto;
+
+}
+
+.radcontrol, .shapecontrol, .clearcanvas {
+  width: 30px;
+  height: 30px;
+  background-color: #4f4f4f;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5), 0px 2px 2px rgba(0,0,0,0.5);
+  color: white;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+#size, #shape, #clear {
+  float: left;
+  color: white;
+  clear: both;
+  margin-bottom: 5px;
+  
+}
+
+/* 
+             colors swatch
+
+*/
+
+/*////////////////////////////////////
+//                                  //
+//        colors  &  swatch         //
+//                                  //
+/////////////////////////////////////*/
+
+
+#colors {
+  float: right;
+  width: 520px;
+  clear: both;
+  position: relative;
+  top: -120px;
+}
+
+#colors {
+  background: #2f2f2f;
+    overflow: hidden;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5), 0px 2px 2px rgba(0,0,0,0.5);
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.swatch.active {
+  border: 5px solid white;
+  box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+}
+.container {
+  width: 100vw;
+}
+
+
+/*////////////////////////////////////
+//                                  //
+//        show canvas changes       //
+//                                  //
+/////////////////////////////////////*/
+
+.container canvas.showCanvas {
+  
+  margin: 30px auto;
+  width: 50vw; 
+}
+
+
+button#savecanvas {
+  margin: 0 auto;
+  width: 16.77vw;
 }
