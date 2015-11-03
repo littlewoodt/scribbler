@@ -1,9 +1,9 @@
-<ul class="gallery">
+<div class="gallery">
 	<% @pictures.each do |pic| %>
 		<%= link_to (raw("<canvas class='galleryCanvas' width='100' height='100'>    
 		</canvas>")), show_path(pic) %>
 	<% end %>
-</ul>	
+</div>	
 
 <!--<%= link_to ("Back to scribble"), draw_path %>-->
 

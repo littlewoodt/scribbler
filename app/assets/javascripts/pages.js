@@ -76,7 +76,7 @@ var dragging = false;
 
 var shape = "round";
 
-canvas.width = 600;
+canvas.width = 635;
 canvas.height = 600;
 
 context.lineWidth = radius;

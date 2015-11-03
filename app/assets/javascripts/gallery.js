@@ -13,7 +13,7 @@ $(document).ready(function() {
 			
 			img.src = gon.pictures[i].picture;
 			
-			ctx.drawImage(img,10,10,80,80)	
+			ctx.drawImage(img,10,10,100,100)	
 		}
 		// All the code above is used to draw our image on the page, from what we have in the database.
 	}

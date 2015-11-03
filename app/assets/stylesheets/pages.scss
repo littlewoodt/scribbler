@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 * {
   margin: 0;
   padding: 0;  
@@ -18,17 +19,44 @@ body {
 }
 
 
-/*    CANVAS    */
+/*////////////////////////////////////
+//                                  //
+//       canvas / showcanvas        //
+//                                  //
+////////////////////////////////////*/
 canvas#drawing, canvas.showCanvas {
   background: #fff;
-  width: 600px;
+  width: 635px;
+  height: 600px;
   display: block;
   margin: 20px auto 10px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 4px 0 0 #ccc;
+  display: block;
   position: relative;
   top: -80px;
 }
+
+/*////////////////////////////////////
+//                                  //
+//        showCanvas changes        //
+//                                  //
+////////////////////////////////////*/
+
+.container canvas.showCanvas {
+  margin: 30px auto;
+  height: 50vh;
+  width: 50vh;
+}
+
+/* changes */
+.container canvas.showCanvas {
+  margin: 12.5vh auto 0;
+  height: 600px;
+  width: 635px;
+}
+
+
 
 a {
   text-decoration: none;
@@ -36,11 +64,17 @@ a {
 }
 
 
-/*    CONTAINER    */
+/*////////////////////////////////////
+//                                  //
+//            container             //
+//                                  //
+////////////////////////////////////*/
+
 .container { 
   width: 75vw;
   text-align: center;
   margin: 0 auto;
+  /* the pencil at the bottom */
   flex-grow: 1;
 }
 
@@ -85,7 +119,17 @@ nav a:hover, nav ul li:hover  {
   background: black;
 }
 
-div.container ul.gallery a canvas.galleryCanvas {
+
+/*////////////////////////////////////
+//                                  //
+//             gallery              //
+//                                  //
+////////////////////////////////////*/
+.gallery {
+  width: 75vw;
+  margin: 0 auto;
+}
+div.container div.gallery a canvas.galleryCanvas {
   float: left;
   width: 12vw;
   height: 12vw;
@@ -100,18 +144,23 @@ div.container ul.gallery a canvas.galleryCanvas {
   border-radius: 6vw;
 }
 
-div .gallery img:hover {
-  border: .5vw solid #2cc26b;
+div.container div.gallery a canvas.galleryCanvas:hover {
+  border: .75vw solid #333;
   width: 12.5vw;
   height: 12.5vw;
   margin: 0;
   overflow: hidden;
   border-radius: 6.25vw;  
   box-sizing: border-box;
+
 }
 
 
-/*    NAVIGATION    */
+/*////////////////////////////////////
+//                                  //
+//            navigation            //
+//                                  //
+////////////////////////////////////*/
 nav {
   width: 100%;
   border: 0;
@@ -142,6 +191,8 @@ nav ul li {
   /* aligns it in the box */
   
   border: 0px solid black;
+
+  /* navigation transitions */
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -190,88 +241,55 @@ nav a:hover, nav ul li:hover  {
   margin: 0 auto;
 }
 
-
+/*////////////////////////////////////
+//                                  //
+//              footer              //
+//                                  //
+////////////////////////////////////*/
 footer {
   margin-top: 20px;
   padding-bottom: 50px;
   text-align: center;
 }
-.controls a {
-  font-size: 2em;
-  color: red;
-  padding: 10px 20px;
-  width: 20px;
-  height: 10px;
-  background: white;
-  text-decoration: none;
-}
 
-
-button {
-  background: #0abe8c;
-  width: 25vw;
-  border-radius: 5px;
-  color: #fff;
+footer img {
+  background: #eaeaea;
   margin: 0 auto;
-  font-weight: bold;
-  margin-top: 0;
-  padding: 12px 20px;
-  border: 0;
-  display: block;
 }
 
-button:hover {
-  color: #fff;
-  background: #0abe8c;
-  border: 0;
-}
-
-/*
-#clear {
-  display: block;
-  background: red;
-  margin-bottom: 10px;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-}
-
-*/
-
-
-
-
-
-
-/* 
-             toolbar swatch scc
-
-*/
-
-
-
-
-
+/*////////////////////////////////////
+//                                  //
+//       toolbar swatch scc         //
+//                                  //
+////////////////////////////////////*/
 #toolbar {
-  width: 800px;
+  min-width: 635px;
+  max-width: 635px;
   height: 120px;
+  padding: 12px;
   padding: 20px;
-  padding-bottom:130px;
+  padding-bottom: 130px;
   background-color: #2f2f2f;
   color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 0 0 #ccc;
-  margin: 180px auto;
-
+  /* box-shadow: 0 4px 0 0 #ccc; */
+  margin: 0 auto;
 }
 
 /* TOOLBAR CENTER, 600PX */
 #toolbar {
-  width: 600px;
-  margin: 20px auto;
-
+/*  width: 600px; */
+  margin: 0 auto;
 }
 
+
+/*////////////////////////////////////
+//                                  //
+//              controls            //
+//                                  //
+////////////////////////////////////*/
+
+/* radiuscontrol shapecontrol and clearcanvas */
 .radcontrol, .shapecontrol, .clearcanvas {
   width: 30px;
   height: 30px;
@@ -286,26 +304,21 @@ button:hover {
   margin-left: 5px;
 }
 
+/* #size shape and clear */
 #size, #shape, #clear {
   float: left;
   color: white;
   clear: both;
-  margin-bottom: 5px;
-  
+  margin-bottom: 5px; 
 }
 
-/* 
-             colors swatch
 
-*/
 
 /*////////////////////////////////////
 //                                  //
 //        colors  &  swatch         //
 //                                  //
-/////////////////////////////////////*/
-
-
+////////////////////////////////////*/
 #colors {
   float: right;
   width: 520px;
@@ -333,25 +346,169 @@ button:hover {
   border: 5px solid white;
   box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
 }
+
+
+
+/*////////////////////////////////////
+//                                  //
+//            container             //
+//                                  //
+////////////////////////////////////*/
+
 .container {
   width: 100vw;
 }
 
 
+
+
+
 /*////////////////////////////////////
 //                                  //
-//        show canvas changes       //
+//             buttons              //
 //                                  //
-/////////////////////////////////////*/
+////////////////////////////////////*/
 
-.container canvas.showCanvas {
-  
-  margin: 30px auto;
-  width: 50vw; 
+button {
+  background: #0abe8c;
+  width: 25vw;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 12px 20px;
+  border: 0;
+  display: block;
 }
 
+button:hover {
+  color: #fff;
+  border: 0;
+}
 
 button#savecanvas {
   margin: 0 auto;
   width: 16.77vw;
+  margin-bottom: 30px;  
+  position: relative;
+  top: -40px;
 }
+
+button#savecanvas:hover {
+  /* button transitions */
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#deletecanvas {
+  background: #0abe8c;
+  width: 25vw;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 12px 20px;
+  border: 0;
+  display: block;
+
+  background: red;
+  margin: -40px auto;
+  width: 16.77vw;
+
+
+}
+
+/*
+.controls a {
+  font-size: 2em;
+  color: red;
+  padding: 10px 20px;
+  width: 20px;
+  height: 10px;
+  background: white;
+  text-decoration: none;
+}
+*/
+
+
+/*
+#clear {
+  display: block;
+  background: red;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+*/
+
+
+
+/*////////////////////////////////////
+//                                  //
+//      drawing canvas wrapper      //
+//                                  //
+////////////////////////////////////*/
+div#drawingwrapper {
+  min-width: 635px;
+  max-width: 635px;
+  width: 50vw;
+  border: 0px solid black;
+  margin: 20px auto;
+  padding: 0;
+  height: 860px;
+  border-radius: 5px;
+}
+
+#toolbar {
+  margin-top: 20px;
+  width: 50vw;
+}
+
+
+/*////////////////////////////////////
+//                                  //
+//            canvas changes        //
+//                                  //
+////////////////////////////////////*/
+
+div.container div#drawingwrapper canvas#drawing {
+  width: 635px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  top: -110px;
+  border-radius: 0 0 5px 5px;
+}
+
+
+/*////////////////////////////////////
+//                                  //
+//               artwork            //
+//                                  //
+////////////////////////////////////*/
+
+#artwork {
+  width: 635px;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 40px;
+  padding: 15px;
+  font-size: 1.5em;
+  background-color: white;
+  color: #2f2f2f;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: relative;
+  top: -75px;
+  font-weight: bold;
+}
+
+
