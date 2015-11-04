@@ -228,14 +228,15 @@ nav a:hover, nav ul li:hover  {
 //                                  //
 ////////////////////////////////////*/
 footer {
-  margin-top: 20px;
-  padding-bottom: 50px;
+
   text-align: center;
   background: #eaeaea;
   padding: 20px;
   width: 100%;
   clear: both;
   width: 100%;
+    margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 footer img {
@@ -420,7 +421,7 @@ div#drawingwrapper {
 
 /* changes*/
   background: white;
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 10px;
 
   background: transparent;
@@ -472,10 +473,32 @@ div.container div#drawingwrapper canvas#drawing {
   border: 1px solid #ccc;
   text-align: center;
 
-  font-weight: bold;
-
   position: relative;
   top: -70px;
 }
 
+
+
+/* Black */
+/* Changes */
+#artwork:focus {
+  color: white;
+  outline: 0;
+}
+
+#artwork:active {
+  background: black;
+  color: #0abe8c;
+  border: 5px solid white;
+  outline: 0;
+}
+
+#artwork {
+  position: relative;
+  top: -75px;
+  font-size: 1.5em;
+  background-color: #2f2f2f;
+  color: #0abe8c;
+  border: 5px solid black;
+}
 
