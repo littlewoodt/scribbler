@@ -12,12 +12,22 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #384047;
+  background: white;
   background: #eaeaea;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  padding: 0.25em;
+}
 
 /*////////////////////////////////////
 //                                  //
@@ -32,6 +42,8 @@ canvas#drawing, canvas.showCanvas {
   margin: 20px auto 10px;
   border-radius: 5px;
   box-shadow: 0 4px 0 0 #ccc;
+  /* changes
+  box-shadow: 0 2px 2px 4px #ccc; */
   display: block;
   position: relative;
   top: -80px;
@@ -42,7 +54,6 @@ canvas#drawing, canvas.showCanvas {
 //        showCanvas changes        //
 //                                  //
 ////////////////////////////////////*/
-
 .container canvas.showCanvas {
   margin: 30px auto;
   height: 50vh;
@@ -57,19 +68,11 @@ canvas#drawing, canvas.showCanvas {
 }
 
 
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-
 /*////////////////////////////////////
 //                                  //
 //            container             //
 //                                  //
 ////////////////////////////////////*/
-
 .container { 
   width: 75vw;
   text-align: center;
@@ -87,38 +90,6 @@ a {
   line-height: 160%;
 }
 
-h1 {
-  font-size: 2em;
-  padding: 0.25em;
-}
-
-.drawingmenu {
-  margin-bottom: 10px;
-  font-size: 10px;
-}
-
-.drawingmenu label, .drawingmenu select, {
-  padding: 100px;
-  padding-top: 20px;
-}
-
-button[value=submit] {
-  display: block;
-  margin: 50px auto;
-}
-
-
-
-/* added */
-
-nav a:hover {
-  text-decoration: none;
-}
-
-nav a:hover, nav ul li:hover  {
-  background: black;
-}
-
 
 /*////////////////////////////////////
 //                                  //
@@ -129,12 +100,13 @@ nav a:hover, nav ul li:hover  {
   width: 75vw;
   margin: 0 auto;
 }
+
 div.container div.gallery a canvas.galleryCanvas {
   float: left;
   width: 12vw;
   height: 12vw;
   margin: .25vw;
-  border: .5vw solid #333;
+  border: 1vw solid #333;
  -moz-transition: all 0.5s ease-in-out;
  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -152,9 +124,18 @@ div.container div.gallery a canvas.galleryCanvas:hover {
   overflow: hidden;
   border-radius: 6.25vw;  
   box-sizing: border-box;
-
 }
 
+
+/* NAV moved added */
+
+nav a:hover {
+  text-decoration: none;
+}
+
+nav a:hover, nav ul li:hover  {
+  background: black;
+}
 
 /*////////////////////////////////////
 //                                  //
@@ -250,6 +231,11 @@ footer {
   margin-top: 20px;
   padding-bottom: 50px;
   text-align: center;
+  background: #eaeaea;
+  padding: 20px;
+  width: 100%;
+  clear: both;
+  width: 100%;
 }
 
 footer img {
@@ -288,7 +274,6 @@ footer img {
 //              controls            //
 //                                  //
 ////////////////////////////////////*/
-
 /* radiuscontrol shapecontrol and clearcanvas */
 .radcontrol, .shapecontrol, .clearcanvas {
   width: 30px;
@@ -311,7 +296,6 @@ footer img {
   clear: both;
   margin-bottom: 5px; 
 }
-
 
 
 /*////////////////////////////////////
@@ -348,7 +332,6 @@ footer img {
 }
 
 
-
 /*////////////////////////////////////
 //                                  //
 //            container             //
@@ -358,9 +341,6 @@ footer img {
 .container {
   width: 100vw;
 }
-
-
-
 
 
 /*////////////////////////////////////
@@ -388,11 +368,12 @@ button:hover {
 }
 
 button#savecanvas {
-  margin: 0 auto;
-  width: 16.77vw;
-  margin-bottom: 30px;  
-  position: relative;
-  top: -40px;
+  margin: -40px auto 0;
+  width: 16.77vw; 
+  margin: 0 auto 40px;
+  width: 33%;
+
+  margin: -40px auto 0;
 }
 
 button#savecanvas:hover {
@@ -415,37 +396,10 @@ button#savecanvas:hover {
   padding: 12px 20px;
   border: 0;
   display: block;
-
   background: red;
-  margin: -40px auto;
+
   width: 16.77vw;
-
-
 }
-
-/*
-.controls a {
-  font-size: 2em;
-  color: red;
-  padding: 10px 20px;
-  width: 20px;
-  height: 10px;
-  background: white;
-  text-decoration: none;
-}
-*/
-
-
-/*
-#clear {
-  display: block;
-  background: red;
-  margin-bottom: 10px;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-}
-*/
 
 
 
@@ -457,16 +411,24 @@ button#savecanvas:hover {
 div#drawingwrapper {
   min-width: 635px;
   max-width: 635px;
+  
   width: 50vw;
-  border: 0px solid black;
+  border: 1px solid transparent;
   margin: 20px auto;
   padding: 0;
-  height: 860px;
   border-radius: 5px;
+
+/* changes*/
+  background: white;
+  margin-top: 30px;
+  border-radius: 10px;
+
+  background: transparent;
 }
 
 #toolbar {
   margin-top: 20px;
+  margin-top: 0;
   width: 50vw;
 }
 
@@ -483,9 +445,11 @@ div.container div#drawingwrapper canvas#drawing {
   margin: 0 auto;
   border-radius: 5px;
   display: block;
-  position: relative;
-  top: -110px;
+
   border-radius: 0 0 5px 5px;
+
+    position: relative;
+  top: -110px;
 }
 
 
@@ -501,14 +465,17 @@ div.container div#drawingwrapper canvas#drawing {
   border-radius: 5px;
   height: 40px;
   padding: 15px;
+  line-height: 40px;
   font-size: 1.5em;
   background-color: white;
   color: #2f2f2f;
   border: 1px solid #ccc;
   text-align: center;
-  position: relative;
-  top: -75px;
+
   font-weight: bold;
+
+  position: relative;
+  top: -70px;
 }
 
 
