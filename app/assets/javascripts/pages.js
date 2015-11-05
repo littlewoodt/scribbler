@@ -76,8 +76,8 @@ var dragging = false;
 
 var shape = "round";
 
-canvas.width = 635;
-canvas.height = 600;
+//canvas.width = 635;
+//canvas.height = 600;
 
 context.lineWidth = radius;
 
@@ -256,6 +256,7 @@ function setColor(color) {
   }
 }
 
+// create active swatch
 function setSwatch(e) {
   // identify swatch
   var swatch = e.target;

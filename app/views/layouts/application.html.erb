@@ -15,14 +15,14 @@
 
 <nav class="tile-nav">
   <ul>
-    <li class="colour-1"><%= link_to "scribble", draw_path %></li>
-    <li class="colour-2"><%= link_to "Gallery", gallery_path %></li>
-    <li class="colour-3"><a href="#">feel lucky?</a></li>
-    <li class="colour-4"></li>
-    <li class="colour-5"><%= link_to "Login", login_path %></li>
-    <li class="colour-6"><%= link_to "Register", new_user_path %></li>
-
-    <li class="colour-7"><%= link_to logout_path do %>
+    <li class="heading nav"><%= link_to "scribble", draw_path %></li>
+    <li class="nav"><%= link_to "Gallery", gallery_path %></li>
+    <li class="nav"></li>
+    <li class="nav"><a href="#">feel lucky?</a></li>
+    <li class="nav"><%= link_to "Login", login_path %></li>
+    <li class="nav"><%= link_to "Register", new_user_path %></li>
+    
+    <li class="nav"><%= link_to logout_path do %>
       <div class="circle"></div>  
       <% end %>
     </li>

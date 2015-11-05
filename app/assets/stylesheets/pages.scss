@@ -54,19 +54,16 @@ canvas#drawing, canvas.showCanvas {
 //        showCanvas changes        //
 //                                  //
 ////////////////////////////////////*/
-.container canvas.showCanvas {
-  margin: 30px auto;
-  height: 50vh;
-  width: 50vh;
-}
 
 /* changes */
 .container canvas.showCanvas {
-  margin: 12.5vh auto 0;
-  height: 600px;
-  width: 635px;
-}
+    height: 50vh;
+  width: 50vh;
 
+  margin: 140px auto 0;
+  height: 50vh;
+  width: 50vh;
+}
 
 /*////////////////////////////////////
 //                                  //
@@ -98,7 +95,7 @@ canvas#drawing, canvas.showCanvas {
 ////////////////////////////////////*/
 .gallery {
   width: 75vw;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 div.container div.gallery a canvas.galleryCanvas {
@@ -107,6 +104,7 @@ div.container div.gallery a canvas.galleryCanvas {
   height: 12vw;
   margin: .25vw;
   border: 1vw solid #333;
+  border: .5vw solid #333;
  -moz-transition: all 0.5s ease-in-out;
  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -126,30 +124,32 @@ div.container div.gallery a canvas.galleryCanvas:hover {
   box-sizing: border-box;
 }
 
-
-/* NAV moved added */
-
-nav a:hover {
-  text-decoration: none;
-}
-
-nav a:hover, nav ul li:hover  {
-  background: black;
-}
-
 /*////////////////////////////////////
 //                                  //
 //            navigation            //
 //                                  //
 ////////////////////////////////////*/
+
+/* NAV remove underline */
+a:active, a:hover, a:visited, a:link {
+  text-decoration: none;
+}
+
+/* nav links hover */
+
 nav {
   width: 100%;
   border: 0;
   background: #007FFF;
-  margin: 0;
-  margin-bottom: 20px;
-  opacity: 1;
-  z-index: 100;
+}
+
+nav a:hover {
+  text-decoration: none;
+  /*background: #282830;*/
+}
+
+nav ul li:hover  {
+  /*background: black;*/
 }
 
 nav ul {
@@ -161,6 +161,7 @@ nav ul {
   /* brings list to edge */
 }
 
+/* Boxes */
 nav ul li {
   list-style: none;
   width: 12.5%;
@@ -170,39 +171,45 @@ nav ul li {
   
   box-sizing: border-box;
   /* aligns it in the box */
-  
-  border: 0px solid black;
 
   /* navigation transitions */
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: background 0.4s ease-in-out;
+  -moz-transition: background 0.4s ease-in-out;
+  -ms-transition: background 0.4s ease-in-out;
+  -o-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
 }
 
 nav ul li a {
   display: block;
   text-decoration: none;
-  font-size: .83em;
+  font-size: 0.833em;
   color: white;
   padding: 20px;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: background 0.4s ease-in-out;
+  -moz-transition: background 0.4s ease-in-out;
+  -ms-transition: background 0.4s ease-in-out;
+  -o-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
 }
 
-nav.tile-nav ul li.colour-1 a {
+/* heading */
+nav.tile-nav ul li.heading a {
   font-size: 1.5em;
   color: black;
   font-weight: bold;
-  max-height: 57px;
+/*  max-height: 57px; */
   line-height: 20px;
   text-align: center;
   width: 12.5vw;
   float: right;
+}
+
+/* heading hover */
+nav.tile-nav ul li.heading a:hover {
+  color: white;
+  text-decoration: none;
+  background: #282830;
 }
 
 nav ul li {
@@ -210,8 +217,10 @@ nav ul li {
   left: 12.5vw;
 }
 
+/* links hover */
 nav a:hover, nav ul li:hover  {
-  background: black;
+  color: white;
+  text-decoration: underline;
 }
 
 .circle {
@@ -222,20 +231,22 @@ nav a:hover, nav ul li:hover  {
   margin: 0 auto;
 }
 
+
+/* fix circle hover */
+
 /*////////////////////////////////////
 //                                  //
 //              footer              //
 //                                  //
 ////////////////////////////////////*/
 footer {
-
   text-align: center;
   background: #eaeaea;
   padding: 20px;
   width: 100%;
   clear: both;
   width: 100%;
-    margin-top: 20px;
+  margin-top: 20px;
   padding-bottom: 50px;
 }
 
@@ -257,6 +268,7 @@ footer img {
   padding: 20px;
   padding-bottom: 130px;
   background-color: #2f2f2f;
+  background: #282830;
   color: white;
   border-radius: 10px;
   /* box-shadow: 0 4px 0 0 #ccc; */
@@ -299,6 +311,40 @@ footer img {
 }
 
 
+
+
+/*////////////////////////////////////
+//                                  //
+//               brushes            //
+//                                  //
+////////////////////////////////////*/
+
+.squarebrush {
+  width: 10px;
+  height: 10px;
+  background: white;
+  margin: 0 auto;
+  margin: 5px auto;
+  overflow: hidden;
+}
+
+.roundbrush {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: white;
+  margin: 5px auto;
+  overflow: hidden;
+}
+
+.radcontrol.active {
+  border: 5px solid white;
+  box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+
+
 /*////////////////////////////////////
 //                                  //
 //        colors  &  swatch         //
@@ -314,6 +360,7 @@ footer img {
 
 #colors {
   background: #2f2f2f;
+  background: #282830;
     overflow: hidden;
 }
 
@@ -429,7 +476,7 @@ div#drawingwrapper {
 
 #toolbar {
   margin-top: 20px;
-  margin-top: 0;
+
   width: 50vw;
 }
 
@@ -448,8 +495,7 @@ div.container div#drawingwrapper canvas#drawing {
   display: block;
 
   border-radius: 0 0 5px 5px;
-
-    position: relative;
+  position: relative;
   top: -110px;
 }
 
@@ -460,6 +506,7 @@ div.container div#drawingwrapper canvas#drawing {
 //                                  //
 ////////////////////////////////////*/
 
+/* White input */
 #artwork {
   width: 635px;
   margin: 0 auto;
@@ -479,26 +526,45 @@ div.container div#drawingwrapper canvas#drawing {
 
 
 
-/* Black */
+/* Black Input */
 /* Changes */
 #artwork:focus {
-  color: white;
+  color: #0abe8c;
   outline: 0;
 }
 
+/*
 #artwork:active {
   background: black;
+  background: #282830;
   color: #0abe8c;
   border: 5px solid white;
   outline: 0;
 }
-
+*/
 #artwork {
   position: relative;
   top: -75px;
   font-size: 1.5em;
   background-color: #2f2f2f;
-  color: #0abe8c;
+  background: #282830;
+  color: white;
   border: 5px solid black;
 }
+
+
+/* White background 
+body {
+  background: white;
+}
+
+footer {
+  background: transparent;
+}
+
+footer img {
+  background: transparent;
+}
+*/
+
 
