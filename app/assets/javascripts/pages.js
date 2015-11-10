@@ -54,9 +54,9 @@
       // eraser = document.getElementById('eraser');
 
       // Attach the mousedown, mousemove and mouseup event listeners.
-      canvas.addEventListener('mousedown', engage);
-      canvas.addEventListener('mousemove', putPoint);
-      canvas.addEventListener('mouseup', disengage);
+      canvas.addEventListener('mousedown', engage, false);
+      canvas.addEventListener('mousemove', putPoint, false);
+      canvas.addEventListener('mouseup', disengage,false);
       savecanvas.addEventListener('click', saveImage);
 
     } // end init
@@ -76,8 +76,15 @@ var dragging = false;
 
 var shape = "round";
 
-//canvas.width = 635;
-//canvas.height = 600;
+
+canvas.width = 800;
+canvas.height = 600;
+
+
+
+//canvas.width = 0.75 * window.innerWidth;
+//canvas.height = 0.5 * window.innerHeight;
+//canvas.style.display = "inline-block";
 
 context.lineWidth = radius;
 

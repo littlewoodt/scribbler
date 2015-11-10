@@ -1,7 +1,7 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+/* rem */
 
 * {
   margin: 0;
@@ -11,9 +11,7 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #384047;
-  background: white;
-  background: #eaeaea;
+  background: #d2bd9b;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -36,34 +34,23 @@ h1 {
 ////////////////////////////////////*/
 canvas#drawing, canvas.showCanvas {
   background: #fff;
-  width: 635px;
-  height: 600px;
-  display: block;
-  margin: 20px auto 10px;
   border-radius: 5px;
   box-shadow: 0 4px 0 0 #ccc;
-  /* changes
-  box-shadow: 0 2px 2px 4px #ccc; */
+}
+
+canvas.showCanvas {
+  margin: 4em auto;
   display: block;
-  position: relative;
-  top: -80px;
 }
 
-/*////////////////////////////////////
-//                                  //
-//        showCanvas changes        //
-//                                  //
-////////////////////////////////////*/
-
-/* changes */
-.container canvas.showCanvas {
-    height: 50vh;
-  width: 50vh;
-
-  margin: 140px auto 0;
-  height: 50vh;
-  width: 50vh;
+canvas#Drawing {
+  width: 635px;
+  height: 600px;
+  margin:0 auto;
+  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
 }
+
 
 /*////////////////////////////////////
 //                                  //
@@ -71,9 +58,9 @@ canvas#drawing, canvas.showCanvas {
 //                                  //
 ////////////////////////////////////*/
 .container { 
-  width: 75vw;
+  width: 100vw;
   text-align: center;
-  margin: 0 auto;
+
   /* the pencil at the bottom */
   flex-grow: 1;
 }
@@ -100,29 +87,35 @@ canvas#drawing, canvas.showCanvas {
 
 div.container div.gallery a canvas.galleryCanvas {
   float: left;
-  width: 12vw;
-  height: 12vw;
-  margin: .25vw;
-  border: 1vw solid #333;
-  border: .5vw solid #333;
+  width: 11.5vw;
+  height: 11.5vw;
+  border: .5vw solid #d2bd9b;
  -moz-transition: all 0.5s ease-in-out;
  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background: white;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 6vw;
+  border-radius: 1vw;
+  border-radius: 100%;
+  margin: 0.5vw;
 }
 
 div.container div.gallery a canvas.galleryCanvas:hover {
-  border: .75vw solid #333;
-  width: 12.5vw;
-  height: 12.5vw;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 6.25vw;  
+  float: left;
+  width: 11.5vw;
+  height: 11.5vw;
+  border: .5vw solid #282830;
+ -moz-transition: all 0.5s ease-in-out;
+ -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: white;
   box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: 0.5vw;
 }
+
 
 /*////////////////////////////////////
 //                                  //
@@ -130,22 +123,15 @@ div.container div.gallery a canvas.galleryCanvas:hover {
 //                                  //
 ////////////////////////////////////*/
 
-/* NAV remove underline */
-a:active, a:hover, a:visited, a:link {
-  text-decoration: none;
-}
-
-/* nav links hover */
-
 nav {
   width: 100%;
   border: 0;
-  background: #007FFF;
+  background: #282830;
+  max-height: 60px;
 }
 
 nav a:hover {
   text-decoration: none;
-  /*background: #282830;*/
 }
 
 nav ul li:hover  {
@@ -153,6 +139,8 @@ nav ul li:hover  {
 }
 
 nav ul {
+  background: #282830;
+  max-height: 57px;
   overflow: hidden;
   margin: 0;
   /* this changes the top */
@@ -185,7 +173,7 @@ nav ul li a {
   text-decoration: none;
   font-size: 0.833em;
   color: white;
-  padding: 20px;
+  padding: 22px;
   -webkit-transition: background 0.4s ease-in-out;
   -moz-transition: background 0.4s ease-in-out;
   -ms-transition: background 0.4s ease-in-out;
@@ -199,7 +187,7 @@ nav.tile-nav ul li.heading a {
   color: black;
   font-weight: bold;
 /*  max-height: 57px; */
-  line-height: 20px;
+  line-height: 16px;
   text-align: center;
   width: 12.5vw;
   float: right;
@@ -241,18 +229,18 @@ nav a:hover, nav ul li:hover  {
 ////////////////////////////////////*/
 footer {
   text-align: center;
-  background: #eaeaea;
-  padding: 20px;
   width: 100%;
-  clear: both;
-  width: 100%;
-  margin-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  margin: 0 auto;
 }
 
 footer img {
-  background: #eaeaea;
+  min-width: 635px;
+  max-width: 800px;
+  padding: 20px 0;
+  width: 75%;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 /*////////////////////////////////////
@@ -262,25 +250,17 @@ footer img {
 ////////////////////////////////////*/
 #toolbar {
   min-width: 635px;
-  max-width: 635px;
+  max-width: 800px;
+  width: 75%;
   height: 120px;
-  padding: 12px;
   padding: 20px;
   padding-bottom: 130px;
-  background-color: #2f2f2f;
   background: #282830;
   color: white;
   border-radius: 10px;
-  /* box-shadow: 0 4px 0 0 #ccc; */
+  margin-top: 20px;
   margin: 0 auto;
 }
-
-/* TOOLBAR CENTER, 600PX */
-#toolbar {
-/*  width: 600px; */
-  margin: 0 auto;
-}
-
 
 /*////////////////////////////////////
 //                                  //
@@ -307,12 +287,12 @@ footer img {
   float: left;
   color: white;
   clear: both;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
-
-
-
+#decrad, #incrad, #clear {
+    font-weight: bold;
+}
 /*////////////////////////////////////
 //                                  //
 //               brushes            //
@@ -341,6 +321,7 @@ footer img {
   border: 5px solid white;
   box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
   overflow: hidden;
+  font-weight: bold;
 }
 
 
@@ -379,16 +360,6 @@ footer img {
   box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
 }
 
-
-/*////////////////////////////////////
-//                                  //
-//            container             //
-//                                  //
-////////////////////////////////////*/
-
-.container {
-  width: 100vw;
-}
 
 
 /*////////////////////////////////////
@@ -445,7 +416,6 @@ button#savecanvas:hover {
   border: 0;
   display: block;
   background: red;
-
   width: 16.77vw;
 }
 
@@ -457,28 +427,13 @@ button#savecanvas:hover {
 //                                  //
 ////////////////////////////////////*/
 div#drawingwrapper {
-  min-width: 635px;
-  max-width: 635px;
-  
-  width: 50vw;
   border: 1px solid transparent;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 0;
-  border-radius: 5px;
-
-/* changes*/
-  background: white;
-  margin-top: 20px;
   border-radius: 10px;
-
   background: transparent;
 }
 
-#toolbar {
-  margin-top: 20px;
-
-  width: 50vw;
-}
 
 
 /*////////////////////////////////////
@@ -487,16 +442,13 @@ div#drawingwrapper {
 //                                  //
 ////////////////////////////////////*/
 
-div.container div#drawingwrapper canvas#drawing {
-  width: 635px;
-  height: 600px;
-  margin: 0 auto;
+div.container canvas#drawing {
+  min-width: 600px;
+  max-width: 800px;
   border-radius: 5px;
-  display: block;
-
   border-radius: 0 0 5px 5px;
-  position: relative;
-  top: -110px;
+  margin: 0;
+  border-radius: 5px;
 }
 
 
@@ -508,63 +460,56 @@ div.container div#drawingwrapper canvas#drawing {
 
 /* White input */
 #artwork {
+  font-size: 1.5em;
   width: 635px;
+  width: 50vw;
   margin: 0 auto;
   border-radius: 5px;
   height: 40px;
   padding: 15px;
   line-height: 40px;
-  font-size: 1.5em;
   background-color: white;
-  color: #2f2f2f;
-  border: 1px solid #ccc;
+  color: #282830;
+  border: 5px solid #ccc;
   text-align: center;
-
-  position: relative;
-  top: -70px;
 }
 
-
-
-/* Black Input */
-/* Changes */
-#artwork:focus {
-  color: #0abe8c;
-  outline: 0;
+.controls {
+ display: inline-block;
 }
 
-/*
-#artwork:active {
-  background: black;
+form#drawing {
+  min-width: 635px;
+  max-width: 800px;
   background: #282830;
-  color: #0abe8c;
-  border: 5px solid white;
-  outline: 0;
+  padding: 20px;
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-bottom: 60px;
+
 }
-*/
+
 #artwork {
-  position: relative;
-  top: -75px;
-  font-size: 1.5em;
-  background-color: #2f2f2f;
-  background: #282830;
-  color: white;
-  border: 5px solid black;
+  box-sizing: border-box;
+  height: 40px;
+  display: inline-block;
+  float: left;
+  width: 75%;
+  margin: 0;
+  padding: 12px 10px;
+  border-radius: 3px;
+  text-align: left;
+  font-size: 1em;
+  font-weight: normal;
+  border: 1px solid #ccc;
 }
 
-
-/* White background 
-body {
-  background: white;
+button#savecanvas {
+  display: inline-block;
+  float: right;
+  width: 25%;
+  margin: 0;
+  box-sizing: border-box;
+  height: 40px;  
 }
-
-footer {
-  background: transparent;
-}
-
-footer img {
-  background: transparent;
-}
-*/
-
-

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="313px" height="39px" viewBox="0 0 313 39" enable-background="new 0 0 313 39" xml:space="preserve">
+<polygon fill="#FFFFFF" points="291.524,0 219.522,0 37,0 37,19.498 37,39 219.522,39 291.524,39 291.524,19.498 291.524,0 "/>
+<g>
+	<path fill="#FFC0CB" d="M296.002,36c-3.855,0-7.478-3.144-7.478-7V10c0-3.856,3.622-7,7.478-7h6c3.855,0,6.522,3.032,6.522,6.75
+		v19.5c0,3.718-2.667,6.75-6.522,6.75H296.002z"/>
+	<path fill="#FFC0CB" d="M302.002,6c2.16,0,3.522,1.725,3.522,3.749v19.5c0,2.025-1.362,3.751-3.522,3.751h-6
+		c-2.161,0-4.478-1.84-4.478-4V10c0-2.161,2.317-4,4.478-4h5.522 M302.002,0l-6,0c-5.5,0-10.478,4.5-10.478,10v19
+		c0,5.5,4.978,10,10.478,10h6c5.5,0,9.522-4.388,9.522-9.751s0-14.138,0-19.5S307.263,0,301.763,0L302.002,0z"/>
+</g>
+<g>
+	<g>
+		<path fill="#282830" d="M285.524,6v13.498V33h-66.002H43V19.498V6h176.522H285.524 M291.524,0l-72.002,0L37,0v19.498V39h182.522
+			h72.002V19.498V0L291.524,0z"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M31,10v19.029l-18.086-9.531L31,9.968 M37,0L0,19.498l37,19.498V0L37,0z M37,0L0,19.498l37,19.498V0L37,0z
+			"/>
+	</g>
+	<g>
+		<polygon fill="#282830" points="19,9.498 0.022,19.498 19,29.499 		"/>
+	</g>
+	<g>
+		<path fill="#282830" d="M285.524,17v5H43v-5H285.524 M291.524,11H37v17h254.524V11L291.524,11z"/>
+	</g>
+</g>
+<rect x="283.789" fill="#FFC0CB" width="14.811" height="39"/>
+<rect x="268.789" fill="#282830" width="15" height="39"/>
+<g>
+	<rect x="81.522" y="8" fill="#FFFFFF" width="138" height="23"/>
+	
+		<text transform="matrix(1 0 0 1 88.3496 28.4565)" fill="#282830" stroke="#282830" stroke-miterlimit="10" font-family="'BebasNeue'" font-size="24" letter-spacing="7">scribble</text>
+</g>
+<g>
+	<g>
+		<path fill="#FFFFFF" d="M244-128v15.5V-97h-58.407H43v-15.5V-128h142.593H244 M251-135h-65.407H36v22.5V-90h149.593H251v-22.5
+			V-135L251-135z"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M258-123.618l20.066,11.118L258-101.382V-124 M251-135.216v45.432l41-22.716L251-135.216L251-135.216z"/>
+	</g>
+	<g>
+		<polygon fill="#FFFFFF" points="271,-124.151 271,-100.849 292.029,-112.5 271,-124.151 		"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M244-115v5H43v-5H244 M251-122H36v19h215V-122L251-122z"/>
+	</g>
+</g>
+</svg>

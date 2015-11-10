@@ -10,8 +10,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body style="margin:0; text-align: center;">
+  
+  <header>
+    <!--<img src="/assets/blacksimplelogopencil.svg"/>-->
+  </header>
 
 <nav class="tile-nav">
   <ul>
@@ -29,6 +32,11 @@
   </ul>
 </nav>
 
+
+
+
+
+
 <div class="container">
 
 <%= yield %>
@@ -37,8 +45,8 @@
 
 
 <footer>
-  
-    <img src="/assets/pen.svg"/>
+        <img src="/assets/blacksimplelogopencil.svg"/>
+    <!--<img src="/assets/pen.svg"/>-->
   
 </footer>
 

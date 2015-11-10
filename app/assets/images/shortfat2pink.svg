@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="313px" height="39px" viewBox="0 0 313 39" enable-background="new 0 0 313 39" xml:space="preserve">
+<g>
+	<path fill="#FFC0CB" d="M15.522,3C19.377,3,23,6.144,23,10v19c0,3.856-3.622,7-7.478,7h-6C5.667,36,3,32.968,3,29.25V9.75
+		C3,6.032,5.667,3,9.522,3H15.522z"/>
+	<path fill="#FFC0CB" d="M9.522,33C7.362,33,6,31.275,6,29.251v-19.5C6,7.726,7.362,6,9.522,6h6C17.683,6,20,7.84,20,10v19
+		c0,2.161-2.317,4-4.478,4H10 M9.522,39h6C21.022,39,26,34.5,26,29V10c0-5.5-4.978-10-10.478-10l-6,0C4.022,0,0,4.388,0,9.751
+		c0,5.363,0,14.138,0,19.5C0,34.613,4.261,39,9.761,39H9.522z"/>
+</g>
+<g>
+	<polygon fill="#FFFFFF" points="78.687,22 23.165,22 23.165,17 78.687,17 78.687,11 17.165,11 17.165,28 78.687,28 	"/>
+	<g>
+		<path fill="#FFFFFF" d="M26,33V19.502V6h66.002h176.522v13.502V33H92.002H26 M20,39h72.002h182.522V19.502V0L92.002,0L20,0v19.502
+			V39L20,39z"/>
+	</g>
+	<g>
+		<path fill="#FFFFFF" d="M280.524,29V9.971l18.086,9.531l-18.086,9.53 M274.524,39l37-19.498l-37-19.498V39L274.524,39z
+			 M274.524,39l37-19.498l-37-19.498V39L274.524,39z"/>
+	</g>
+	<g>
+		<polygon fill="#707070" points="292.524,29.502 311.502,19.502 292.524,9.501 		"/>
+	</g>
+</g>
+<rect x="12.924" fill="#FFC0CB" width="14.811" height="39"/>
+<rect x="27.735" fill="#FFFFFF" width="15" height="39"/>
+<rect x="259.735" fill="#FFFFFF" width="15" height="39"/>
+<g>
+	<polygon fill="#FFFFFF" points="219.522,11 219.522,17 268.524,17 268.524,22 219.522,22 219.522,28 274.524,28 274.524,11 	"/>
+</g>
+<text transform="matrix(1 0 0 1 88.633 28.173)" fill="#FFFFFF" font-family="'BebasNeue'" font-size="24" letter-spacing="7">scribble</text>
+</svg>
